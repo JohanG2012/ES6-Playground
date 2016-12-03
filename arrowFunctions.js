@@ -46,3 +46,11 @@ const car = {
 car.accelerate();
 
 setTimeout(() => car.cruise(), 5000);
+
+// Arrow functions are still functions
+console.log(topeof function() {}); // "funciton"
+console.log(typeof (() => {})); // "function"
+console.log(function() {} instanceof Function); // true
+console.log((() => {}) instanceof Function); // true
+
+ 
