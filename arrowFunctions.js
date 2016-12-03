@@ -7,6 +7,5 @@ const aFunc = () => Math.random() * 100;
 const anotherFunc = (argOne, argTwo) => Math.random() * argOne + argTwo;
 
 // Named anonumos function with one arguments
-var yetAnotherFunc = function(argOne) {
-  return Math.random() * argOne;
+const yetAnotherFunc = argOne => Math.random() * argOne;
 }
