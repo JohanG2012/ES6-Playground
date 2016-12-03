@@ -25,6 +25,6 @@ let aOtherArray = someArray.map(() => ({}) );
 let yetAnotherArray = someArray.map(x => ({number: x}) );
 
 // An Immediatly-invoked function
-(function(message) {
+(message => {
   console.log(message);
 }) ("hello");
