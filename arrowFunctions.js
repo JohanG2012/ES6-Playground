@@ -23,3 +23,8 @@ let aOtherArray = someArray.map(() => ({}) );
 
 // Use of map to create an array of objects containing the number.
 let yetAnotherArray = someArray.map(x => ({number: x}) );
+
+// An Immediatly-invoked function
+(function(message) {
+  console.log(message);
+}) ("hello");
