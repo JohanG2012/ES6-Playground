@@ -28,3 +28,21 @@ let yetAnotherArray = someArray.map(x => ({number: x}) );
 (message => {
   console.log(message);
 }) ("hello");
+
+// this values with ES6 arrow funcitons
+const car = {
+  speed: 0,
+  accelerate: function() {
+    this.accelerator = setInterval(
+      () => {
+        this.speed++;
+        console.log(this.speed);
+      },
+      100
+    );
+  }
+};
+
+car.accelerate();
+
+setTimeout(() => car.cruise(), 5000);
