@@ -20,3 +20,10 @@ const mutltiFunc = () => {
 let someArray = [1, 2, 3];
 
 let aOtherArray = someArray.map(() => ({}) );
+
+// Use of map to create an array of objects containing the number.
+var yetAnotherArray = someArray.map(function(x) {
+  return {
+    number: x;
+  }
+});
