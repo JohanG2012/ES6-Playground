@@ -15,3 +15,10 @@ const mutltiFunc = () => {
     // Do something
   }
 }
+
+// Use of map to create an array of empty objects.
+var someArray = [1, 2, 3];
+
+var aOtherArray = someArray.map(function() {
+  return {};
+});
