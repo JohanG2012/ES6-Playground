@@ -10,7 +10,7 @@ const anotherFunc = (argOne, argTwo) => Math.random() * argOne + argTwo;
 const yetAnotherFunc = argOne => Math.random() * argOne;
 
 // Named anonumous function with mutiple statements
-var mutltiFunc = function() {
+const mutltiFunc = () => {
   if (true) {
     // Do something
   }
