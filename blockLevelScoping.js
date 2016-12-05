@@ -13,3 +13,6 @@ function doAlot() {
 
   console.log(aValue); // 15
 }
+
+// const must always be declared with a value directly
+const unique = "Hi! I'm unique!";
