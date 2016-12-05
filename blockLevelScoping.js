@@ -75,3 +75,21 @@ function sayHello(hello) {
   }
   console.log(hello); // parameter value
 }
+
+
+/*
+When?
+- Use const for variables that should be immutable.
+- When const is used for object, remember that you might want to use
+Object.freeze aswell.
+- Use let for everything else
+
+- The only time you actually might want to use var is when you for some reason
+actually want to declare something on the global scope. For example
+ ES3-5-style namespaces or modules. Best would be to convert those modules to ES6
+ modules. But for backwards compability you may still want to use var.
+
+ - Do not mix var and let in the same file. Be consistent.
+ - Do not do a search-and-replace to replace all var with let in a old project.
+ the project might have code that is unintentionlly relying on the quirkness of var.
+ */
