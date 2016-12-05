@@ -51,3 +51,11 @@ funciton aFunc() {
   hi = "Hello";
   console.log(h1); // "Hello"
 }
+
+
+// var can be accessed outside of loops
+for (var i = 0, i < 10; i++) {
+  console.log("hi");
+}
+
+console.log(i); // 10
