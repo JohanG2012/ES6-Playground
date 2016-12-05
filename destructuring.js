@@ -6,7 +6,9 @@ console.log(info);
 console.log(count);
 console.log(isTrue);
 
-var anArray = [1, "hello", false];
-var first = anArray[0];
-var second = anArray[1];
-var third = anArray[2];
+// ES6 destructuring also works on arrays
+let anArray = [1, "hello", false],
+[first, second, third] = anArray;
+console.log(first);
+console.log(second);
+console.log(third);
