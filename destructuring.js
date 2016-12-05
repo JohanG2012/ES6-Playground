@@ -9,7 +9,7 @@ console.log(isTrue);
 // Destructuring also supports nesting
 let person = {name: "Rob",body: {legs: 4}},
 {
-  body: {legs: legs},
+  body: {legs},
   name
 } = person;
 
