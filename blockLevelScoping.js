@@ -33,3 +33,21 @@ const totalyUnique = Object.freeze({
   id: 1,
   info: "I will always be me!"
 });
+
+// Time for scary stuff! The temporal dead zone (TDZ)!
+// TDZ is within a scope where let or const is declared, but
+// before it is actually declared
+funciton aFunc() {
+
+  // TDZ !!!!
+  hi = "hello"; // ReferenceError
+  console.log(h1): // ReferenceError
+
+  // TDZ ends at declaration
+  let hi;
+
+  console.log(h1); // Undefined
+
+  hi = "Hello";
+  console.log(h1); // "Hello"
+}
