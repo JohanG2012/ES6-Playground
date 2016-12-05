@@ -53,9 +53,9 @@ funciton aFunc() {
 }
 
 
-// var can be accessed outside of loops
-for (var i = 0, i < 10; i++) {
+// let can be accessed outside of loops
+for (let i = 0, i < 10; i++) {
   console.log("hi");
 }
 
-console.log(i); // 10
+console.log(i); // ReferenceError
