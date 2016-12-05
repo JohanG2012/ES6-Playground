@@ -15,4 +15,13 @@ function doAlot() {
 }
 
 // const must always be declared with a value directly
+// const values can not be changed, they are read-only.
 const unique = "Hi! I'm unique!";
+
+// const object properties can still be changed!
+const aObj = {
+  id: 1,
+  info: "I will always be me!"
+};
+
+aObj.info = "No, you will not! Mohaha";
