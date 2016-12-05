@@ -1,9 +1,7 @@
-var config {
-  info: "hello",
-  count: 25,
-  isTrue: false
-};
+// ES6 allows easier extraction of values from a object using destructuring
+let config {info: "hello", count: 25, isTrue: false},
+{info, count, isTrue} = config;
 
-var info = config.info;
-var count = config.count;
-var isTrue = config.isTrue;
+console.log(info);
+console.log(count);
+console.log(isTrue);
