@@ -25,3 +25,11 @@ const aObj = {
 };
 
 aObj.info = "No, you will not! Mohaha";
+
+
+// By using ES5 Object.freeze we can make sure so that the objects properties
+// can not be changed!
+const totalyUnique = Object.freeze({
+  id: 1,
+  info: "I will always be me!"
+});
