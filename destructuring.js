@@ -63,3 +63,8 @@ let [, areaCode, exchange, lineNumber] =
 
 // output: 650, 555, 1234
 console.log(areaCode, exchange, lineNumber);
+
+// Destructuring can be used with other ES6 operators such as
+// spread and rest operators, we can also use default values.
+// We can even use them to destructure function arguments directly
+// in the arguments defintion
