@@ -77,3 +77,31 @@ function someCalc(x, y, z, ...shouldBeEmpty) {
 
   return x + y + z;
 }
+
+
+function merge() {
+  var _obj = {};
+
+  // Take a infinity of "arguments" and merge them into the _obj Object
+  for (var i = 0; i < arguments.length; i++) {
+    var obj = arguments[i];
+    for (var key in obj) {
+      _obj[key] = obj[key];
+    }
+  }
+  return _obj;
+}
+var objList = [
+  {
+    one: "hello",
+    two: "world"
+  },
+  {
+    three: "world",
+    four: "hello"
+  }
+];
+var merged = merge.apply(undefined, objList);
+
+// {one: "hello", two: "world", three: "world", four: "hello"}
+console.log(merged);
