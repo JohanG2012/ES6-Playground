@@ -48,3 +48,9 @@ let numbers = [1, 2, 3, 4, 5, 6, 7, 8],
 
 // 1, 2, 4, 8
 console.log(one, two, four, eight);
+
+// You can use destructuring on mixed array/object as well.
+// Using destructturing on mixed array/object becomes handy when handling JSON.
+
+// Destructuring is also possible on Class objects as long as its properties
+// are accessable via dot or bracket notation.
