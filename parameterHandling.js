@@ -107,3 +107,43 @@ var merged = merge.(...objList);
 
 // {one: "hello", two: "world", three: "world", four: "hello"}
 console.log(merged);
+
+// The spread operator does not have to be used in function calls
+// here is a few other examples.
+
+
+// Can be used with destructuring
+let numbers = [1, 2, 3, 4, 5, 6],
+[one, two, ...rest] = numbers;
+
+// [3, 4, 5, 6], 1, 2
+console.log(rest, one, two);
+
+// We can also collapse and array within another array
+let moreNumbers = [...numbers, 7, 8];
+
+// [1, 2, 3, 4, 5, 6, 7, 8]
+console.log(moreNumbers);
+
+function ajax(url, options) {
+  var method = options.method,
+  delay = options.delay,
+  callback = options.callback;
+
+  console.log(url, method, delay);
+  setTimeout(
+    function() { callback("DONE!"); },
+    delay
+  );
+}
+
+ajax(
+  "http://some.api.com/get",
+  {
+    delay: 5000,
+    method: "POST",
+    callback: function(m) {
+      console.log(m);
+    }
+  }
+);
