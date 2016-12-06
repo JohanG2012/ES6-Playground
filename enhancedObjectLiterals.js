@@ -27,9 +27,11 @@ function Car(make, model, value) {
 let aProp = "value";
 let obj = {[aProp]};
 
+// The ES6 Method definition shorthand allows us to define a Method
+// without having to use function, colon or keyword
 function calc(value) {
   return {
-    increase: function() {
+    increase() {
       this.value += 5000;
     }
   };
