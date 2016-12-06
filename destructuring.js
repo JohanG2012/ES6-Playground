@@ -54,3 +54,12 @@ console.log(one, two, four, eight);
 
 // Destructuring is also possible on Class objects as long as its properties
 // are accessable via dot or bracket notation.
+
+// Destructuring can also be used directy on return valus for methods that
+// returns an array for example.
+let [, areaCode, exchange, lineNumber] =
+	/^(\d\d\d)-(\d\d\d)-(\d\d\d\d)$/
+		.exec('650-555-1234');
+
+// output: 650, 555, 1234
+console.log(areaCode, exchange, lineNumber);
