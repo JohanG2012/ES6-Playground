@@ -21,3 +21,16 @@ function Car(make, model, value) {
     ["make" + make]: true
   };
 }
+
+// Computed Property values can not be combined with property value shorthand
+// the folowing will result in a SyntaxError
+let aProp = "value";
+let obj = {[aProp]};
+
+function calc(value) {
+  return {
+    increase: function() {
+      this.value += 5000;
+    }
+  };
+}
