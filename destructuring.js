@@ -38,5 +38,13 @@ console.log(third);
 let names = ["jonas", "rob", ["marcus"]],
 [first, [second], third] = names;
 
-// "jonas", "rob", "marcus" 
+// "jonas", "rob", "marcus"
 console.log(first, second, third);
+
+// Array literal destructuring is order-independent. But we can
+// still choose which elements to pick.
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8],
+[one, two, , four, , , , eight] = numbers;
+
+// 1, 2, 4, 8
+console.log(one, two, four, eight);
