@@ -47,3 +47,16 @@ function afunc(value, propertyName) {
     }
   }
 }
+
+function cube(value) {
+	return Math.pow(value, 3);
+}
+function cubeRoot(value) {
+	return Math.pow(value, 1/3);
+}
+
+// export the following functions
+module.exports = {
+	cube: cube,
+	cubeRoot: cubeRoot
+};
