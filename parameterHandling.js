@@ -8,3 +8,12 @@ function getData(data, useCache=true) {
     console.log("not using cache for", data);
   }
 }
+
+// Clever way to add required parameters in ES6 by Allen Wirfs-Brock
+function throwIfMissing() {
+  throw new Error("Missing parameter");
+}
+
+function someFunc(requiredParam = throwIfMissing()) {
+  // Some code...
+}
