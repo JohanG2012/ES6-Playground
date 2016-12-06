@@ -78,18 +78,18 @@ function someCalc(x, y, z, ...shouldBeEmpty) {
   return x + y + z;
 }
 
+// Takes an infinity of parameters by using rest parameter called objects
+function merge(...objects) {
+  let result = {};
 
-function merge() {
-  var _obj = {};
-
-  // Take a infinity of "arguments" and merge them into the _obj Object
-  for (var i = 0; i < arguments.length; i++) {
-    var obj = arguments[i];
-    for (var key in obj) {
-      _obj[key] = obj[key];
+  // iterate over the objects rest parameter to merge them all to a single object
+  for (let i = 0; i < objects.length; i++) {
+    let obj = objects[i];
+    for (let key in obj) {
+      result[key] = obj[key];
     }
   }
-  return _obj;
+  return result;
 }
 var objList = [
   {
@@ -101,7 +101,9 @@ var objList = [
     four: "hello"
   }
 ];
-var merged = merge.apply(undefined, objList);
+
+// Uses spread operator to collapse the array
+var merged = merge.(...objList);
 
 // {one: "hello", two: "world", three: "world", four: "hello"}
 console.log(merged);
