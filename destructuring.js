@@ -16,6 +16,16 @@ let person = {name: "Rob",body: {legs: 4}},
 // "Rob" 4
 console.log(name, legs);
 
+// Destructuring is fail-soft, meaning missing properties will get undefined.
+let options = {},
+{delay, info} = options;
+
+console.log(delay, info) // undefined undefined
+
+// This does how ever not apply on properties when the parent is missing.
+let configuration = {},
+{option: {name}} = configuration; // Error
+
 
 // ES6 destructuring also works on arrays
 let anArray = [1, "hello", false],
