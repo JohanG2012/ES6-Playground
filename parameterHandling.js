@@ -25,3 +25,11 @@ function someFunc(requiredParam = throwIfMissing()) {
 function func(width=calcWidth(), height=width*2, config={option: true}) {
   // some code
 }
+
+// undefined values will be defaulted
+function calc(x, y=7, z) {
+  console.log(x, y, z);
+}
+
+// 3, 7, 4
+calc(3, undefined, 4)
