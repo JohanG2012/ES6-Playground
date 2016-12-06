@@ -28,11 +28,22 @@ let aProp = "value";
 let obj = {[aProp]};
 
 // The ES6 Method definition shorthand allows us to define a Method
-// without having to use function, colon or keyword
+// without having to use function keyword and colon
 function calc(value) {
   return {
     increase() {
       this.value += 5000;
     }
   };
+}
+
+
+// And Method definition shorthand can be used with computed property, so the
+// following will work!
+function afunc(value, propertyName) {
+  return {
+    [propertyName]() {
+      this.value += 5000;
+    }
+  }
 }
