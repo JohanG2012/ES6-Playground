@@ -144,3 +144,26 @@ ajax(
     }
   }
 );
+
+// We can even combind the above function with default values
+// So if the object is unspecified or undefined, it will be an empty object
+// which will then get destructed into method, delay and callback.
+// It is good practice to add a default value to a destructed parameter since
+// trying to destruct undefined would result in an Error.
+function anotherAjax(url, {method, delay, callback}={}) {
+  console.log(url, method, delay);
+  setTimeout(
+    () => callback("DONE!"),
+    delay
+  );
+}
+
+// We can even add default values within our object destructing pattern by using
+// nested default values!
+function yetAnotherAjax(url, {method="GET", delay=5000, callback}={}) {
+  console.log(url, method, delay);
+  setTimeout(
+    () => callback("DONE!"),
+    delay
+  );
+}
