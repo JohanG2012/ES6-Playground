@@ -17,3 +17,11 @@ function throwIfMissing() {
 function someFunc(requiredParam = throwIfMissing()) {
   // Some code...
 }
+
+// In ES6 functions can not only have String, Number and Boolean as
+// default parameter values but it can also have Array, Object and Function
+// as a default parameter value, it can even be the result of a expression or
+// function call
+function func(width=calcWidth(), height=width*2, config={option: true}) {
+  // some code
+}
