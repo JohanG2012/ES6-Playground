@@ -125,14 +125,11 @@ let moreNumbers = [...numbers, 7, 8];
 // [1, 2, 3, 4, 5, 6, 7, 8]
 console.log(moreNumbers);
 
-function ajax(url, options) {
-  var method = options.method,
-  delay = options.delay,
-  callback = options.callback;
-
+// Make use of destructuring to make it clear which properties a object contains
+function ajax(url, {method, delay, callback}) {
   console.log(url, method, delay);
   setTimeout(
-    function() { callback("DONE!"); },
+    () => callback("DONE!"),
     delay
   );
 }
