@@ -36,3 +36,17 @@ calc(3, undefined, 4)
 
 // arrow functions with ONE parameter with a default value, still need parenthesis
 const randomFunc = (x=2) => x*x;
+
+function join(seperator) {
+  var values = [];
+
+  for (var i = 1; i < arguments.length; i++) {
+    values.push(arguments[i]);
+  }
+
+
+  return values.join(seperator);
+}
+
+//  "one++two++three"
+console.log(join("++", "one", "two", "three"));
