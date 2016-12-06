@@ -35,3 +35,31 @@ let person = {firstName: "John", lastName: "Doe"},
 
 // Name: John, Doe
 console.log(`Name: ${firstName}, ${lastName}`)
+
+// Template literals also has support for multiline
+let multiline = `Hello! I am
+a mutiline,
+cool huh?`
+
+// With Template literals all whitespace is include, therefore indentetion might
+// be importnan!
+let html = (`
+<html>
+  <head></head>
+  <body></body>
+</html>`);
+
+// With string interpolation and mutiline template literals we can actually
+// create some cool HTML stuff!
+let eventCardInfo = {
+  tite: "November 2016",
+  url: "www.example.com",
+  subheading: "A day with ES6"
+},
+{title, url, subheading} = eventCardInfo;
+
+let section = (`
+<section>
+  <h3><a href="${url}">${title}</a></h3>
+  <h4>${subheading}</h4>
+</section>`)
