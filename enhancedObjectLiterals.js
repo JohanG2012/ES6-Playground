@@ -56,7 +56,4 @@ function cubeRoot(value) {
 }
 
 // export the following functions
-module.exports = {
-	cube: cube,
-	cubeRoot: cubeRoot
-};
+module.exports = {cube, cubeRoot};
