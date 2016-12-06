@@ -1,4 +1,4 @@
-
+"use strict";
 
 // Named anonumous function without any arguments
 const aFunc = () => Math.random() * 100;
@@ -52,5 +52,3 @@ console.log(topeof function() {}); // "funciton"
 console.log(typeof (() => {})); // "function"
 console.log(function() {} instanceof Function); // true
 console.log((() => {}) instanceof Function); // true
-
- 

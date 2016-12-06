@@ -1,3 +1,5 @@
+"use strict";
+
 // declare a new variable that will only exist within the current block
 let someVar = "a new variable"
 

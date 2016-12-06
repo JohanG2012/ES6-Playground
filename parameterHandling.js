@@ -1,3 +1,5 @@
+"use strict";
+
 // In ES6 functions bodies does not have to deal with default logic
 // the new syntax is also alot easier to understand
 // parameters with default values are concidered as optional
@@ -37,14 +39,10 @@ calc(3, undefined, 4)
 // arrow functions with ONE parameter with a default value, still need parenthesis
 const randomFunc = (x=2) => x*x;
 
-function join(seperator) {
-  var values = [];
-
-  for (var i = 1; i < arguments.length; i++) {
-    values.push(arguments[i]);
-  }
-
-
+// ES6 allows a function to take more parameters then specified.
+// it is done by adding 3 dots before a param. That param is now a "Rest Parameter"
+// a rest parameter is a array containing the rest of the parameters.
+function join(seperator, ...values) {
   return values.join(seperator);
 }
 
