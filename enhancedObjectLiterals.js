@@ -14,10 +14,10 @@ function Person(name, age, parents) {
   };
 }
 
+// Computed property keys works the same way in ES6 as they did pre-ES6. the
+// only difference is that it can now be done within object literals
 function Car(make, model, value) {
-  var car = {};
-
-  car["make" + make] = true;
-
-  return car;
+  return {
+    ["make" + make]: true
+  };
 }
