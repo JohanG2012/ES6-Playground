@@ -26,3 +26,12 @@ someOtheText = "example";
 
 // Programers like to use Hello world as an example
 console.log(`Programers like to use ${someText} world as an ${someOtherText}`)
+// Now, ${} is not only for variable interpolation it is for expression interpoaltion
+// as well, meaning you could use it for an expression, number, function, ternary operator etc
+
+// If you want to use interpolation on object properties you have to us destructuring first
+let person = {firstName: "John", lastName: "Doe"},
+{firstName, lastName} = person;
+
+// Name: John, Doe
+console.log(`Name: ${firstName}, ${lastName}`)
