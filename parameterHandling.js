@@ -60,11 +60,20 @@ function multipleRest(first, ...second, ...third) {
 
 // Set a maximum artity (max number of passed parameters) using Rest parameters
 function someCalc(...nums) {
-  if (num.length > 5) {
-    throw new Error("max 5 parameters allowed!");
+  if (num.length > 3) {
+    throw new Error("max 3 parameters allowed!");
   }
 
   let [x, y, z] = nums;
+
+  return x + y + z;
+}
+
+// Above can also be solved like...
+function someCalc(x, y, z, ...shouldBeEmpty) {
+  if (shouldBeEmpty.length > 0) {
+    throw new Error("max 3 parameters allowed!");
+  }
 
   return x + y + z;
 }
