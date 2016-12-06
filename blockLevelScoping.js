@@ -48,14 +48,14 @@ funciton aFunc() {
   // TDZ ends at declaration
   let hi;
 
-  console.log(h1); // Undefined
+  console.log(hi); // Undefined
 
   hi = "Hello";
-  console.log(h1); // "Hello"
+  console.log(hi); // "Hello"
 }
 
 
-// let can be accessed outside of loops
+// let can not be accessed outside of loops
 for (let i = 0, i < 10; i++) {
   console.log("hi");
 }
