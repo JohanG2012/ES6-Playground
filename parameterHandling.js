@@ -33,3 +33,6 @@ function calc(x, y=7, z) {
 
 // 3, 7, 4
 calc(3, undefined, 4)
+
+// arrow functions with ONE parameter with a default value, still need parenthesis
+const randomFunc = (x=2) => x*x;
