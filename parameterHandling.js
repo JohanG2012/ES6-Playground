@@ -48,3 +48,12 @@ function join(seperator, ...values) {
 
 //  "one++two++three"
 console.log(join("++", "one", "two", "three"));
+
+// A Rest Parameter must be the last parameter. A function can only have one
+// Rest Parameter
+function afterRest(first, ...second, third) {
+	// SyntaxError: parameter after rest parameter
+}
+function multipleRest(first, ...second, ...third) {
+	// SyntaxError: parameter after rest parameter
+}
