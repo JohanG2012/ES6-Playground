@@ -33,3 +33,10 @@ let anArray = [1, "hello", false],
 console.log(first);
 console.log(second);
 console.log(third);
+
+// Destructuring has support for nesting on array as well
+let names = ["jonas", "rob", ["marcus"]],
+[first, [second], third] = names;
+
+// "jonas", "rob", "marcus" 
+console.log(first, second, third);
