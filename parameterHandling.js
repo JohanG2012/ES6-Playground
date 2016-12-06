@@ -57,3 +57,14 @@ function afterRest(first, ...second, third) {
 function multipleRest(first, ...second, ...third) {
 	// SyntaxError: parameter after rest parameter
 }
+
+// Set a maximum artity (max number of passed parameters) using Rest parameters
+function someCalc(...nums) {
+  if (num.length > 5) {
+    throw new Error("max 5 parameters allowed!");
+  }
+
+  let [x, y, z] = nums;
+
+  return x + y + z;
+}
