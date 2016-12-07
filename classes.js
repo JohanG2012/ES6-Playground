@@ -57,12 +57,14 @@ let person = new Person(); // Error
 let teacher = new Theacher(); // Success
 
 
-// The ES5 way of adding methods to a class
-function Animal(toSay, legs) {
-  this.toSay = toSay;
-  this.legs = legs;
-}
+// ES6 makes it easier to add methods
+class Animal {
+  constructor(toSay, legs) {
+    this.toSay = toSay;
+    this.legs = legs;
+  }
 
-Animal.prototype.talk = function() {
-  return this.toSay;
+  talk() {
+  return toSay;  
+  }
 }
