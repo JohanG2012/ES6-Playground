@@ -65,6 +65,11 @@ class Animal {
   }
 
   talk() {
-  return toSay;  
+  return toSay;
+  }
+
+  // You can even compute class method names
+  ["to" + "String"]() {
+    return `The is a Animal with ${this.legs} legs and when it talk it says ${talk()}`
   }
 }
