@@ -184,3 +184,9 @@ let setDifference = difference(
 
 // output: 3
 console.log(setDifference.size);
+
+/*
+We also have WeakSet. A WeakSet pretty much is a WeakMap but for Set.
+I does have the same limitations as a WeakMap like it is not iterable, can only hold
+Objects etc. It also serves the same purpose when it comes to garbage collection.
+*/
