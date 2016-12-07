@@ -80,3 +80,10 @@ Objects does however only accept Strings as keys. If you don't want to use strin
 maybe you would like to use an Object as a key for example. Or maybe the key is dynamic and might
 change from String to Object somewhere along the way. Then Maps is the only way to go.
 */
+
+/*
+We also have WakMaps. WeakMaps are alot like Maps but wit restrictions.
+A WeakMap is not iterable so it does not have .size, .clear(), .entries(),
+.keys(), .values() or forEach(). And all keys MUST also be Objects.
+ */
+let aWeakMap = new WeakMap();
