@@ -85,3 +85,10 @@ class Animal {
 }
 
 Animal._something = "";
+
+
+// Extand inheritable built-ins
+// NOTE: extended built-ins can not be transpiled or shimmed. They has to be nativly
+// supported by the browser. So there might be a while before we can use them safely
+// (the era of Internet Expoler need to come to an end first).
+class myOwnError extends Error {}
