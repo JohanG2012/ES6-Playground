@@ -70,6 +70,18 @@ class Animal {
 
   // You can even compute class method names
   ["to" + "String"]() {
-    return `The is a Animal with ${this.legs} legs and when it talk it says ${talk()}`
+    return `The is a Animal with ${this.legs} legs and when it talk it says ${this.talk()}`
   }
+
+  // Methods that makes use of the keyword "static" are methods who are not dependent on inctances. Instead the "this"
+  // keyword will refer to the class itselfs
+  static doSomething() {
+    this._something = "I add something here, eheheh";
+  }
+
+  // getters and setters works the same way in ES6 as in ES5
+  get something() {return this._something;}
+  set something() {this._something = "something"}
 }
+
+Animal._something = "";
