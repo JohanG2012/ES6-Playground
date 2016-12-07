@@ -38,5 +38,31 @@ class Teacher extends Person {
 
 // If you dont have a constructor, you dont have to use this.
 class Teacher extends Person {
-  
+
+}
+
+// ES6 does however not add a "abstract" keyword. But abstract classes
+// can be achived with the use of new.target
+
+class Person {
+  constructor() {
+    if (new.target === Person) {
+      throw new Error("Can not be cunstructed directly. This is an abstract class");
+    }
+  }
+}
+
+
+let person = new Person(); // Error
+let teacher = new Theacher(); // Success
+
+
+// The ES5 way of adding methods to a class
+function Animal(toSay, legs) {
+  this.toSay = toSay;
+  this.legs = legs;
+}
+
+Animal.prototype.talk = function() {
+  return this.toSay;
 }
