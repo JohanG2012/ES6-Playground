@@ -1,7 +1,9 @@
 "use strict";
 
-function Person(age, name, parents) {
-  this.age = age;
-  this.name = name;
-  this.parents = parents; 
+class Person {
+  constructor(age, name, parents) {
+    this.age = age;
+    this.name = name;
+    this.parents = parents;
+  }
 }
