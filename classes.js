@@ -92,3 +92,14 @@ Animal._something = "";
 // supported by the browser. So there might be a while before we can use them safely
 // (the era of Internet Expoler need to come to an end first).
 class myOwnError extends Error {}
+
+
+/* NOTE:
+"class" unlike protype based classes are not hoisted so they do exist in the
+temporal dead zone.
+
+All code within a class declartion also runs in strict mode, and there is no way
+to get around that.
+
+Trying to overwrite a class or to create a instance without using the "new" keyword will throw an error.
+*/
