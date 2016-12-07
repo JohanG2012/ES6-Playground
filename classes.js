@@ -24,3 +24,6 @@ const Person = function(age, name, parents) {
 
 // ES6 clases are still functions
 console.log(typeof.Person === "function"); // true
+
+
+Person.prototype = new Student();
