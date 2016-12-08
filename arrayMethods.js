@@ -44,3 +44,19 @@ console.log(arr); // [0, 1, 1]
 // the third argument is end index
 arr.fill(2, 1, 1);
 console.log(arr); // [0, 2, 1]
+
+// [].find() returns the first element that fulfills provided callback
+let someArr = [1, 2, 3, 50, 75];
+
+function big(element) {
+  return element >= 20;
+}
+
+function veryBig(element) {
+  return element >= 150;
+}
+
+console.log(someArr.find(big)) // 50
+
+// If nothing fulfilles the callback, undefined will be returned
+console.log(someArr.find(veryBig)) // undefined
