@@ -3,7 +3,7 @@
 // Example of asynchronous programming in JavaScript using promises
 function fetch(url) {
 
-  // Return promis object
+  // Returns promise object
   // The function in the Promise constructor is known as a executor.
   // If  computation went well, the executor send the results trough resolve().
   // If the computation did not go fell, the executor informs the user trough reject().
@@ -70,5 +70,96 @@ console.log("Jasmine");
 Promise.reject(new Error("I did something wrong..."))
   .catch(error => {
     console.error(error);
+  }
+);
+
+/*
+NOTE: A Promise is an thenable. An thenable that behaves the same way as a
+promise meaning it accepts two arguments that are functions resolve() and
+reject() and make use of then().
+*/
+
+// Example of how all thrown error in a porimise is handle by the catch() callback
+
+// Immediatly fulfilled promise
+Promise.resolve()
+  .then(() => {
+    // Throws an error which will be caught by catch()
+    throw new Error("Something went wrong here...")
+  })
+  .catch((error) => {
+    // "Something went wrong here..."
+    console.log(error);
+
+    // You can also throw an error here
+    throw new Error("here too...");
+  })
+  .catch((error) => {
+    // And it will be caught here...
+
+    // "here too..."
+    console.log(error)
+  }
+);
+
+// You can define default values to be used incase of failure by adding a return value
+// in your catch() callback.
+fetch("/json/data.json")
+  .catch(() => {
+    // Return default data
+    return JSON.stringify({someProp: "someValue"});
+  })
+  .then(response => {
+    // If the fetch where not successfull output would be:
+    // {someProp: "someValue"}
+    console.log(response);
+  }
+);
+
+// Example of how errors are passed down the chain
+
+// Immediatly rejected Promise
+Promise.reject(new Error("Failure!"))
+  .then(() => {
+    // Promise is rejected, this reaction is never called
+  })
+  .then(() => {
+    // The same goes for this one
+  })
+  .catch(error => {
+    // The rejection reaction is called to handle the rejection that happend
+    // further up the chain.
+    // "Failure!"
+    console.log(error);
+  }
+);
+
+// If you have mutiple Promises that you want the results for before moving
+// forward you can use Promise.all
+
+// All fetch requests are fulfilled trought Promise.All
+function fetchAll(...urls) {
+    return Promise.all(
+      // map the array of urls into and array of fetch promises
+      urls.map(fetch)
+    );
+}
+
+// Make XHR request for each URL and process once all request completed
+fetchAll(
+  "/json/dataOne.json",
+  "/json/dataTwo.json",
+  "/json/dataThree.json",
+  "/json/dataFour.json"
+)
+  .then(responses => {
+    // Responses is a array of responses
+    console.log(responses.length); // 4
+
+    // Some processing here...
+  })
+  .catch(error => {
+    // one or more of the requests failed or there was an error in the then() callback
+    console.log(error);
   }
 );
