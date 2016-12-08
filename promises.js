@@ -56,3 +56,19 @@ and catch() exclusibly for errors.
 If you call then() on a already fullfilled promise you will recive the cached settled value right away
 
 */
+
+// You can create an "immediatly" fullfilled promis by using resolve directly
+Promise.resolve("John")
+  .then(name => {
+    console.log(name)
+  }
+);
+// But since a Promise always is async this one will log before above "name"
+console.log("Jasmine");
+
+// You can also create an "immediatly" rejacted promis by using reject directly
+Promise.reject(new Error("I did something wrong..."))
+  .catch(error => {
+    console.error(error);
+  }
+);
