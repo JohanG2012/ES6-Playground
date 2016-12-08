@@ -1,30 +1,44 @@
 "use strict";
 
-// Example of asynchronous programming in JavaScript with event handlers
-var url = "/json/data.json";
-var req = new XMLHttpRequest();
+// Example of asynchronous programming in JavaScript callbacks
+function fetch(url, callback) {
+  var request = new XMLHttpRequest();
 
-request.open("GET", url);
+  request.open("GET", url);
 
-request.onload = function() {
-  if (request.status === 200) {
-    try {
-      var responseJson = JSON.parse(request.responseText);
-      // Do some stuff with the data
-    } catch (error) {
-      console.log(error);
+  request.onload = function() {
+    var data;
+    var error;
+
+    if (request.status === 200) {
+      data = request.responseText;
+    } else {
+      error = new Error("Request failed");
     }
-  } else {
-    console.error("Request failed");
+
+    callback({data:data, error:error});
   }
-};
 
-request.oneror = function(e) {
-  console.error(error);
+  request.oneror = function(error) {
+    callback({error:error});
+  }
+
+  try {
+    request.send();
+  } catch(error) {
+    callback({error:error})
+  }
 }
 
-try {
-  request.send();
-} catch (error) {
-  console.log(error)
-}
+fetch('/json/data.json', function(responseObj) {
+	if (!responseObj.error) {
+		try {
+			console.log('data!', JSON.parse(responseObj.data));
+		}
+		catch (e) {
+      console.error(e);
+    }
+	} else {
+    console.error(responseObj.error);
+  }
+});
