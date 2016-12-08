@@ -60,3 +60,41 @@ console.log(someArr.find(big)) // 50
 
 // If nothing fulfilles the callback, undefined will be returned
 console.log(someArr.find(veryBig)) // undefined
+
+// [].findIndex() works the same way as [].find() the difference is that it returns
+// the index of the first element that fulfills the callback.
+
+console.log(someArr.find(big)) // 3
+
+// If nothing fulfilles the callback, -1 will be returned
+console.log(someArr.find(veryBig)) // -1
+
+// The [].entries() method returns a new Array Iterator object that contains
+// the key/value pairs for each index in the array.
+let a = ['a', 'b', 'c'];
+let iterator = a.entries();
+
+console.log(iterator.next().value); // [0, 'a']
+console.log(iterator.next().value); // [1, 'b']
+console.log(iterator.next().value); // [2, 'c']
+
+// The [].keys() method returns a new Array Iterator that contains the
+// keys for each index in the array.
+let arr = ["a", "b", "c"];
+let iterator = arr.keys();
+
+console.log(iterator.next()); // { value: 0, done: false }
+console.log(iterator.next()); // { value: 1, done: false }
+console.log(iterator.next()); // { value: 2, done: false }
+console.log(iterator.next()); // { value: undefined, done: true }
+
+// The [].values() method returns a new Array Iterator object that
+// contains the values for each index in the array.
+let a = ['w', 'y', 'k', 'o', 'p'];
+let iterator = a.values();
+
+console.log(iterator.next().value); // w
+console.log(iterator.next().value); // y
+console.log(iterator.next().value); // k
+console.log(iterator.next().value); // o
+console.log(iterator.next().value); // p
