@@ -163,3 +163,34 @@ fetchAll(
     console.log(error);
   }
 );
+
+// There is also somthing called Promise.race . Promise.race works in a similar
+// way as Promis.all the differece is if the first Primise success, then the
+// following will be fullfilled as well. But if the first Promise gets rejected
+// then all of the other Promises will get rejected as well. Example below
+
+// Function that throws error on timeout
+function timeout(delay=5000) {
+  return wait(delay).then(() => {
+    throw new Error("Time out!");
+  });
+}
+
+function fetch(url, delay=5000) {
+  return Promise.race([
+    fetch(url),
+    timeout(delay)
+  ]);
+}
+
+// Promise will be fullfilled if the fetch is fullfilled before the timout
+fetch("/json/data.json", 2000)
+  .then(response => {
+    // Success on time
+    console.log(response);
+  })
+  .catch(error => {
+    // If not handles timeout here..
+    console.log(error);
+  }
+);
