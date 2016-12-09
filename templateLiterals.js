@@ -63,3 +63,27 @@ let section = (`
   <h3><a href="${url}">${title}</a></h3>
   <h4>${subheading}</h4>
 </section>`)
+
+// Tagged template literals make it possible to modify the output of the literals using a function
+let a = 5;
+let b = 10;
+function tag(stings, ...values) {
+  console.log(strings[0]); // "Hello "
+  console.log(strings[1]); // " world "
+  console.log(strings[2]); // ""
+  console.log(values[0]);  // 15
+  console.log(values[1]);  // 50
+}
+
+tag`Hello ${a + b} world ${a * b}`;
+
+// Another example
+function tag(strings, ...values) {
+  return "Good Night!";
+}
+
+console.log(tag`Good Morning!`); // "Good Night!"
+
+// Template literals also has a .raw property, allowing you to access the raw strings
+// as they where entered
+console.log(String.raw`Hello World \n ${10 + 5}`); // "Hello World \n 15"
