@@ -5,7 +5,7 @@ Object.is(window, window);   // true
 Object.is('foo', 'bar');     // false
 Object.is([], []);           // false
 
-var test = { a: 1 };
+let test = { a: 1 };
 Object.is(test, test);       // true
 
 Object.is(null, null);       // true
